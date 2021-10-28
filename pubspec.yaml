@@ -47,6 +47,9 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  dependencies:
+  badges: ^2.0.1
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -59,7 +62,7 @@ flutter:
   assets:
     - assets/img/default_user.png
     - assets/img/logo.png
-    - entities/some_entities.json
+    - lib/entities/some_entities.json
 
   # fonts:
   #   - family: VetIcons
