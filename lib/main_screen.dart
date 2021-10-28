@@ -27,7 +27,7 @@ class MainScreen extends StatelessWidget {
           width: 2)
           ),
         ),
-      body: const MainListView()
+      body: MainListView(context)
     );
   }
   

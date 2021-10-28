@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:vet_project/animal_registration.dart';
 
+import 'animal_reg.dart';
 import 'main_screen.dart';
-import 'login_page.dart';
 
 
-void main() => runApp(MyApp());
+void main() => runApp(StaticApp());
 class StaticApp extends StatelessWidget {
  @override
  Widget build(BuildContext context) {

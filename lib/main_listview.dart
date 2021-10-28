@@ -1,5 +1,8 @@
+import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vet_project/animal_reg.dart';
 import 'package:vet_project/app_constants.dart';
 import 'package:vet_project/assets/vet_icons_icons.dart';
 
@@ -7,7 +10,7 @@ import 'package:vet_project/assets/vet_icons_icons.dart';
 
 // Main content of first screen after authorization
 class MainListView extends StatelessWidget {
-  const MainListView({Key? key}) : super(key: key);
+  const MainListView(BuildContext context, {Key? key}) : super(key: key);
  
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,8 @@ class MainListView extends StatelessWidget {
         buildMenuItem(
           text: 'Регистрация животных',
           mainIcon: VetIcons.vet_animal_registration,
-          trailingIcon: Icons.navigate_next
+          trailingIcon: Icons.navigate_next,
+          onClicked: () => selectedItem(context, 0) 
         ),
          const SizedBox(height: 20,),
         buildMenuItem(
@@ -52,6 +56,7 @@ Widget buildMenuItem({
   required String text,
   required IconData mainIcon,
   required IconData trailingIcon,
+  VoidCallback? onClicked,
 }) {
 
     final hoverColor = Color(0xffdee2e6);
@@ -61,7 +66,14 @@ Widget buildMenuItem({
       ),
       trailing: Icon(trailingIcon, color: AppColors.GREY_COLOR),
        hoverColor: hoverColor,
-       onTap: () {},
+       onTap:onClicked,
     );
   
+}
+void selectedItem(BuildContext context, int index) {
+  switch(index) {
+    case 0 : 
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => AnimalRegistration()));
+    break;
+  }
 }
