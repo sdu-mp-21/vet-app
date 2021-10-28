@@ -10,4 +10,5 @@ class AppColors {
   static const Color BACKGROUND_COLOR = Color(0xffe5e5e5);
   static const Color MAIN_COLOR = Color(0xffff7800);
   static const Color GREY_COLOR = Color(0xff212529);
+  static const Color COUNT_COLOR = Color(0xffFFE4CC);
 }
