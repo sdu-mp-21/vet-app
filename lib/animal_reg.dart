@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:badges/badges.dart';
+import 'package:vet_project/choose_owner.dart';
 
 import 'app_constants.dart';
 
@@ -20,6 +21,7 @@ class _AnimalRegistration extends State<AnimalRegistration> {
   List _items = [];
 
 
+
   Future<void> readJson() async {
     final String responce = await rootBundle.loadString('lib/entities/some_entities.json');
     final data = await json.decode(responce);
@@ -28,6 +30,9 @@ class _AnimalRegistration extends State<AnimalRegistration> {
     });
   }
 
+  bool selectedPrev = true;
+  bool selectedNext = true;
+  String? pageTitle;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +40,12 @@ class _AnimalRegistration extends State<AnimalRegistration> {
         backgroundColor: Colors.transparent,
         iconTheme: const IconThemeData(color: AppColors.GREY_COLOR),
         elevation: 0,
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+              icon: Icon( selectedPrev ? Icons.arrow_back : Icons.title),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+          ),
         title:const Text("Регистрация животных", style: TextStyle(color: AppColors.GREY_COLOR)),
         centerTitle: true,
         shape: Border(bottom: BorderSide(
@@ -46,17 +56,13 @@ class _AnimalRegistration extends State<AnimalRegistration> {
         body: FutureBuilder (
           future: readJson(),
           builder: (context, AsyncSnapshot snapshot){
-            // if(snapshot.data == null) {
-            //   return Container (
-            //     child: Center (child: Text("Loading..."),)
-            //   );
-            // }else
             {
               return ListView.builder(
                 itemCount: _items.length,
                 itemBuilder: (context, int index){
                    return ListTile(
                      leading: Text(_items[index]["name"].toString(), style:  const TextStyle(fontSize: 16.0 ,color: AppColors.GREY_COLOR),),
+                      
                       trailing: Wrap(
                         spacing: 12, // space between two icons
                         children: <Widget>[
@@ -67,7 +73,13 @@ class _AnimalRegistration extends State<AnimalRegistration> {
                           borderRadius: BorderRadius.circular(4),
                           badgeContent: Text(_items[index]["count"].toString(), style: const TextStyle(color: AppColors.GREY_COLOR)),
                         ),// icon-1
-                        const Icon(Icons.navigate_next_sharp),// icon-2
+                        IconButton(
+              icon: Icon( selectedPrev ? Icons.navigate_next : Icons.title),
+              onPressed: () {
+                Navigator.push(context,
+    MaterialPageRoute(builder: (context) => ChooseOwner()),);
+              },
+          ),
                         ],
                       ),
                   );

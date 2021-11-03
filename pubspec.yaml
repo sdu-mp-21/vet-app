@@ -62,6 +62,7 @@ flutter:
     - assets/img/default_user.png
     - assets/img/logo.png
     - entities/some_entities.json
+    - entities/sample_application_entities.json
 
   # fonts:
   #   - family: VetIcons
