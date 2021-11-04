@@ -3,10 +3,12 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-// import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
+import 'package:local_auth/local_auth.dart';
 import 'main.dart';
 import 'fastPassword.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 void main() => runApp(MyApp());
@@ -35,10 +37,17 @@ class _SphlashScreen extends State<MyStatefulWidget> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => NextPage()));
-    });
+      Timer(Duration(seconds: 3), () {
+          Navigator.of(context)
+              .pushReplacement(MaterialPageRoute(builder: (_) => NextPage()));
+      });
+
+  }
+
+  getFastPassword() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    String? str = preferences.getString('fastPassword');
+    return str;
   }
 
   @override
