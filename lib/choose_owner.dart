@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
-import 'dart:html';
-
+import 'owner_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -64,14 +63,18 @@ class _ChooseOwner extends State<ChooseOwner> {
                    return ListTile(
                      title: Text(_items[index]["street"].toString() + " " + _items[index]["home"].toString(), style:  const TextStyle(fontSize: 16.0 ,color: AppColors.GREY_COLOR),),
                       subtitle: Text(_items[index]["name"].toString() + " " + _items[index]["surname"].toString(), style: TextStyle(fontSize: 14.0 ,color: Colors.grey[450]),),
-                       trailing:  const Icon(Icons.navigate_next_outlined)
+                       trailing:  const Icon(Icons.navigate_next_outlined),
     //                   IconButton(
     //                     icon: Icon( selectedPrev ? Icons.navigate_next : Icons.title),
-    //                     onPressed: () {
+     //   onPressed: () {
     //             Navigator.push(context,
     // MaterialPageRoute(builder: (context) => OwnerPage()),);
     //           },
     //                 ),
+                     onTap: () {
+                       Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => owner_page()),);
+                     },
                   );
                 });
             }
