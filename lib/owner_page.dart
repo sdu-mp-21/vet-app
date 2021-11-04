@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:image_picker/image_picker.dart';
+import 'camera.dart';
 
 class owner_page extends StatelessWidget {
   @override
@@ -36,7 +37,11 @@ class HomePage extends StatelessWidget {
 
 
           children: [
-            ElevatedButton(child: Text("Добавить животное",), onPressed:(){}),
+            ElevatedButton(child: Text("Добавить животное",),
+                onPressed:(){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => camera_page()),);
+                }),
 
             const  SizedBox(
               height: 15.0,
