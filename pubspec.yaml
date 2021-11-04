@@ -35,6 +35,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: 0.12.2
   intl: ^0.16.1
+  shared_preferences: ^2.0.8
+  local_auth: ^0.6.3
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +63,10 @@ flutter:
   assets:
     - assets/img/default_user.png
     - assets/img/logo.png
-    - entities/some_entities.json
-    - entities/sample_application_entities.json
+    - lib/assets/img/gray_round.png
+    - lib/assets/img/orange_round.png
+    - lib/entities/some_entities.json
+    - lib/entities/sample_application_entities.json
 
   # fonts:
   #   - family: VetIcons
