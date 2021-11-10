@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
-import 'owner_page.dart';
+import 'dart:html';
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +19,7 @@ class ChooseOwner extends  StatefulWidget {
 }
 class _ChooseOwner extends State<ChooseOwner> {
    List _items = [];
+   String token = '';
 
 
   Future<void> readJson() async {
@@ -31,8 +33,49 @@ class _ChooseOwner extends State<ChooseOwner> {
 
  bool selectedPrev = true;
   bool selectedNext = true;
+
+  getData(String tok) async {
+    var response = await http.get('https://admin.vetqyzmet.kz/api/v5/getInfo', headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization' : 'Bearer $tok'
+    });
+    var jsonData = null;
+    if (response.statusCode == 200) {
+      jsonData = json.decode(response.body);
+      _items = jsonData['data'];
+      print(jsonData);
+
+    }
+    else {
+      print('Not 200');
+    }
+  }
+
+   getUserData(String email, String password) async {
+     Map data = {
+       'email' : email,
+       'password' : password
+     };
+     var response = await http.post('https://admin.vetqyzmet.kz/api/v1/auth', headers: <String, String>{
+       'Content-Type': 'application/json; charset=UTF-8',
+     }, body: json.encode(data));
+     var jsonData = null;
+     if (response.statusCode == 200) {
+       jsonData = json.decode(response.body);
+       token = jsonData['token'];
+       print(token);
+       getData(token);
+     }
+     else {
+       print('not 200');
+     }
+
+   }
+
   @override
   Widget build(BuildContext context) {
+    getUserData('email', 'password');
+
      return Scaffold(
        appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -63,18 +106,14 @@ class _ChooseOwner extends State<ChooseOwner> {
                    return ListTile(
                      title: Text(_items[index]["street"].toString() + " " + _items[index]["home"].toString(), style:  const TextStyle(fontSize: 16.0 ,color: AppColors.GREY_COLOR),),
                       subtitle: Text(_items[index]["name"].toString() + " " + _items[index]["surname"].toString(), style: TextStyle(fontSize: 14.0 ,color: Colors.grey[450]),),
-                       trailing:  const Icon(Icons.navigate_next_outlined),
+                       trailing:  const Icon(Icons.navigate_next_outlined)
     //                   IconButton(
     //                     icon: Icon( selectedPrev ? Icons.navigate_next : Icons.title),
-     //   onPressed: () {
+    //                     onPressed: () {
     //             Navigator.push(context,
     // MaterialPageRoute(builder: (context) => OwnerPage()),);
     //           },
     //                 ),
-                     onTap: () {
-                       Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => owner_page()),);
-                     },
                   );
                 });
             }

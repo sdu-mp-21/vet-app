@@ -67,137 +67,7 @@ class HomePage extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
 }
-class nextPage extends StatefulWidget {
-  @override
-  _MainPage createState() => _MainPage();
-}
 
-class _MainPage extends State<nextPage> {
-  Duration duration = Duration();
-  Timer? timer;
-  String change = 'Start';
-
-  @override
-  void initState() {
-    super.initState();
-
-    //startTimer();
-  }
-
-  void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
-  }
-
-  void stopTimer({bool resets = true}) {
-    if (resets) {
-      setState(() => timer?.cancel());
-    }
-    else {
-      setState(() => timer?.cancel());
-      reset();
-    }
-  }
-
-  void reset() {
-    setState(() => duration = Duration());
-  }
-  void addTime() {
-    setState(() {
-      final seconds = duration.inSeconds + 1;
-
-      duration = Duration(seconds: seconds);
-    });
-  }
-
-  void closeDialog() {
-    Navigator.of(context).pop();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                title: Text('Dialog'),
-                content: Text('Are you sure?'),
-                actions: [
-                  FlatButton(
-                    onPressed: () { Navigator.of(context).pop(); Navigator.of(context).pop(); },
-                    child: Text('Yes'),
-                  ),
-                  FlatButton(
-                    onPressed: () { closeDialog(); },
-                    child: Text('No'),
-                  ),
-                ],
-              ),
-          ),
-        ),
-        title: Text('Count up timer'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildTime(),
-              buildButton(),
-            ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildTime() {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    final minutes = twoDigits(duration.inMinutes.remainder(60));
-    final seconds = twoDigits(duration.inSeconds.remainder(60));
-
-    return Text(
-      '$minutes:$seconds',
-      style: TextStyle(fontSize: 80),
-    );
-  }
-
-  Widget buildButton() {
-    final isRuning = timer == null ? false : timer!.isActive;
-
-    return isRuning
-        ? Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        TextButton(
-          child: Text('STOP'),
-          onPressed: () {
-            if (isRuning) {
-              stopTimer(resets: false); change = 'Start';
-            }
-          },
-        ),
-        TextButton(
-          child: Text('PAUSE'),
-          onPressed: () {
-            if (isRuning) {
-              stopTimer(resets: true); change = 'Resume';
-            }
-          },
-        ),
-      ]
-    )
-        : TextButton(
-            onPressed: () { startTimer();},
-            child: Text('$change'),
-
-    );
-
-  }
-
-}
 class _LoginState extends State<HomePage> {
   var token;
   final myController = TextEditingController();
@@ -311,7 +181,7 @@ class _LoginState extends State<HomePage> {
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
-              signIn(myController.text, myControllerForPass.text);
+              getUserData(myController.text, myControllerForPass.text);
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.orange),
@@ -344,6 +214,31 @@ class _LoginState extends State<HomePage> {
         content: Text('Incorrect login'),
       ));
     }
+  }
+
+  getUserData(String email, String password) async {
+    Map data = {
+      'email' : email,
+      'password' : password
+    };
+    var response = await http.post('https://admin.vetqyzmet.kz/api/v1/auth', headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    }, body: json.encode(data));
+    var jsonData = null;
+    if (response.statusCode == 200) {
+      jsonData = json.decode(response.body);
+      token = jsonData['token'];
+      print('200');
+      print(token);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => StaticApp()),
+      );
+    }
+    else {
+      print('not 200');
+    }
+
   }
 }
 
@@ -423,5 +318,4 @@ class TextContainer extends StatelessWidget{
   }
 
 }
-
 
