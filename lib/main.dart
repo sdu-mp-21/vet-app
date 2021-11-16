@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vet_project/choose_owner.dart';
+import 'package:vet_project/view/owner_page.dart';
+
 
 
 import 'animal_reg.dart';
@@ -13,6 +16,11 @@ class StaticApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MainScreen(),
+      routes: {
+        AnimalRegistration.routeName: (context) => AnimalRegistration(),
+        ChooseOwner.routeName: (context) => ChooseOwner(),
+        OwnerPage.routeName: (context) => OwnerPage()
+      },
     );
   }
 }

@@ -1,34 +1,89 @@
-{
-  "data": [
-    {
-      "id": 97,
-      "name": "Әлібек",
-      "street": "Бескара",
-      "home": "97",
-      "krs_count": 20,
-      "phone": "+77054832390",
-      "surname": "Бекнияз",
-      "mrs_count": 4,
-      "pig_count": 2,
-      "horse_count": 1,
-      "camel_count": 9,
-      "status": 2,
-      "status2_time": "1634141981"
-    },
-    {
-      "id": 100,
-      "name": "Виталий",
-      "street": "Уалиханова",
-      "home": "198",
-      "krs_count": 6,
-      "phone": "+77789973105",
-      "surname": "Василенко",
-      "mrs_count": 2,
-      "pig_count": 1,
-      "horse_count": 1,
-      "camel_count": 8,
-      "status": 2,
-      "status2_time": "1634187920"
-    }
-  ]
-}
+[
+  {
+    "id": 41,
+    "locality_name": "Каратауский район",
+    "data": [
+      {
+        "id": 97,
+        "name": "Әлібек",
+        "street": "Бескара",
+        "home": "97",
+        "krs_count": 20,
+        "phone": "+77054832390",
+        "surname": "Бекнияз",
+        "mrs_count": 4,
+        "pig_count": 2,
+        "horse_count": 1,
+        "camel_count": 9,
+        "status": 2,
+        "status2_time": "1634141981"
+      },
+      {
+        "id": 97,
+        "name": "Әлібек",
+        "street": "Бескара",
+        "home": "97",
+        "krs_count": 20,
+        "phone": "+77054832390",
+        "surname": "Бекнияз",
+        "mrs_count": 4,
+        "pig_count": 2,
+        "horse_count": 1,
+        "camel_count": 9,
+        "status": 2,
+        "status2_time": "1634141981"
+      },
+      {
+        "id": 97,
+        "name": "Әлібек",
+        "street": "Бескара",
+        "home": "97",
+        "krs_count": 20,
+        "phone": "+77054832390",
+        "surname": "Бекнияз",
+        "mrs_count": 4,
+        "pig_count": 2,
+        "horse_count": 1,
+        "camel_count": 9,
+        "status": 2,
+        "status2_time": "1634141981"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "locality_name": "Енбекшинский район",
+    "data": [
+      {
+        "id": 100,
+        "name": "Виталий",
+        "street": "Уалиханова",
+        "home": "198",
+        "krs_count": 6,
+        "phone": "+77789973105",
+        "surname": "Василенко",
+        "mrs_count": 2,
+        "pig_count": 1,
+        "horse_count": 1,
+        "camel_count": 8,
+        "status": 2,
+        "status2_time": "1634187920"
+      },
+      {
+        "id": 100,
+        "name": "Виталий",
+        "street": "Уалиханова",
+        "home": "198",
+        "krs_count": 6,
+        "phone": "+77789973105",
+        "surname": "Василенко",
+        "mrs_count": 2,
+        "pig_count": 1,
+        "horse_count": 1,
+        "camel_count": 8,
+        "status": 2,
+        "status2_time": "1634187920"
+      }
+    ]
+  }
+]

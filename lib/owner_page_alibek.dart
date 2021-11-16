@@ -1,42 +1,39 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-    MaterialApp(
-        home: OwnerPage(),
-        debugShowCheckedModeBanner: false
-    ));
+import 'app_constants.dart';
+import 'model/owner.dart';
 
-class OwnerPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Myapp",
-      home: Owner(),
-    );
-  }
-}
+bool selectedPrev = true;
 
-class Owner extends StatelessWidget {
+class OwnerPage1 extends StatelessWidget {
+
+  List<Owner>? owners;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back_rounded,
-          color: Colors.black,
-        ),
-        title: const Text(
-          'Страница Собственника',
-
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-          ),
-        ),
+      backgroundColor: Colors.transparent,
+      iconTheme: const IconThemeData(color: AppColors.GREY_COLOR),
+      elevation: 0,
+      leading: IconButton(
+        icon: Icon( selectedPrev ? Icons.arrow_back : Icons.title),
+        onPressed: () {
+          Navigator.pop(context);
+        },
       ),
+      title:const Text("Страница Собственника", style: TextStyle(color: AppColors.GREY_COLOR)),
+      centerTitle: true,
+      shape: Border(bottom: BorderSide(
+          color: Colors.grey[350]!,
+          width: 2)
+      ),
+    ),
 
       body: SingleChildScrollView(
         child: Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'app_constants.dart';
 import 'camera.dart';
 
 class owner_page extends StatelessWidget {
@@ -13,25 +14,45 @@ class owner_page extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+bool selectedPrev = true;
+
+class OwnerPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-        leading: const Icon(
-          Icons.arrow_back_rounded,
-          color: Colors.black,
-        ), // Icon
-        title: const Text(
-          'Страница Собственника',
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-          ),
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(color: AppColors.GREY_COLOR),
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon( selectedPrev ? Icons.arrow_back : Icons.title),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        backgroundColor: Colors.white,
+        title:const Text("Страница Собственника", style: TextStyle(color: AppColors.GREY_COLOR)),
+        centerTitle: true,
+        shape: Border(bottom: BorderSide(
+            color: Colors.grey[350]!,
+            width: 2)
+        ),
       ),
+
+      // appBar: AppBar(
+      //
+      //   leading: const Icon(
+      //     Icons.arrow_back_rounded,
+      //     color: Colors.black,
+      //   ), // Icon
+      //   title: const Text(
+      //     'Страница Собственника',
+      //     style: TextStyle(
+      //       fontSize: 20,
+      //       color: Colors.black,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.white,
+      // ),
       body: SingleChildScrollView(
         child: Column(
 
