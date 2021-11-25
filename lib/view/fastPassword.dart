@@ -146,41 +146,42 @@ class _Page extends State<NextPage> {
 
     return Scaffold(
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text('$description'),
-            Row(
+            Container(margin: EdgeInsets.only(bottom: 180, top: 10) ,child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
+                  Container(margin: EdgeInsets.symmetric(horizontal: 6) ,child: Image.asset(
                     '$firstGray',
                     width: 18,
                     height: 18,
-                  ),
-                  Image.asset(
+                  ),),
+                  Container(margin: EdgeInsets.symmetric(horizontal: 6) ,child: Image.asset(
                     '$secondGray',
                     width: 18,
                     height: 18,
-                  ),
-                  Image.asset(
+                  ),),
+                  Container(margin: EdgeInsets.symmetric(horizontal: 6), child: Image.asset(
                     '$thirdGray',
                     width: 18,
                     height: 18,
-                  ),
-                  Image.asset(
+                  ),),
+                  Container(margin: EdgeInsets.symmetric(horizontal: 6) ,child: Image.asset(
                     '$fourthGray',
                     width: 18,
                     height: 18,
-                  ),
+                  ),)
 
                 ]
-            ),
+            ),),
 
-            Row(
+            Container(margin: EdgeInsets.only(bottom: 10), child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
+                  Container(margin: EdgeInsets.symmetric(horizontal: 5) ,child: TextButton(
                       onPressed: () {zhan('1');},
                       child: Text('1', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -189,8 +190,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+                  Container(margin: EdgeInsets.symmetric(horizontal: 5) ,child: TextButton(
                       onPressed: () {zhan('2');},
                       child: Text('2', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -199,8 +200,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+                  Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('3');},
                       child: Text('3', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -209,14 +210,14 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
+                  ),),
                 ]
-            ),
-            Row(
+            ),),
+            Container(margin: EdgeInsets.only(bottom: 10), child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
+            Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('4');},
                       child: Text('4', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -225,8 +226,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+      Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('5');},
                       child: Text('5', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -235,8 +236,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+      Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('6');},
                       child: Text('6', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -245,14 +246,14 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
+                  ),),
                 ]
-            ),
-            Row(
+            ),),
+            Container(margin: EdgeInsets.only(bottom: 10), child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
+            Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('7');},
                       child: Text('7', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -261,8 +262,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+      Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('8');},
                       child: Text('8', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -271,8 +272,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+      Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('9');},
                       child: Text('9', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -281,14 +282,15 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
+                  ),),
                 ]
-            ),
-            Row(
+            ),),
+            Container(margin: EdgeInsets.only(bottom: 44),
+               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
+                Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {},
                       child: Text('F', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -297,8 +299,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+      Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {zhan('0');},
                       child: Text('0', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -307,8 +309,8 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
-                  TextButton(
+                  ),),
+      Container(margin: EdgeInsets.symmetric(horizontal: 5),child: TextButton(
                       onPressed: () {oshir();},
                       child: Text('B', style: TextStyle(color: Colors.black),),
                       style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.orange), backgroundColor: MaterialStateProperty.all<Color>(Colors.black12), minimumSize: MaterialStateProperty.all<Size>(Size(48,48)) ,shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -317,9 +319,9 @@ class _Page extends State<NextPage> {
                           )
                       )
                       )
-                  ),
+                  ),),
                 ]
-            ),
+            ),),
           ],
         )
     );
