@@ -10,6 +10,9 @@ import 'package:vet_project/main.dart';
 
 class api_manager {
   String token = '';
+  int stateId = 92;
+  int type = 1;
+  String mainUrl = "https://admin.vetqyzmet.kz/api";
 
   setToken() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -99,5 +102,32 @@ class api_manager {
     else {
       print('Not 200');
     }
+  }
+
+  getByType() async {
+    var response = await http.get('https://admin.vetqyzmet.kz/api/v6/tasksByStatement/$stateId?animal_type_id=$type', headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization' : 'Bearer $token'
+    });
+
+    var jsonData = null;
+    if (response.statusCode == 200) {
+      jsonData = json.decode(response.body);
+      var listData = jsonData as List;
+      String type = listData[0].animal_type;
+      String urlToPhoto = listData[0].photo1;
+      String name = listData[0].name;
+      String gender = listData[0].gender;
+      String ING = listData[0].ING;
+      String breed = listData[0].breed;
+      String suit = listData[0].suit;
+      String dateOfBirth = listData[0].Date_Of_Birth;
+
+      print(jsonData);
+    }
+    else {
+      print('Not 200');
+    }
+
   }
 }
