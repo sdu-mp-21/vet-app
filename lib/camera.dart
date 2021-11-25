@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
 
   //final ImagePicker _picker = ImagePicker();
   File? image;
+  File? image1;
 
   void filePicker() async {
     final File? selectedImage = await ImagePicker.pickImage(source: ImageSource.camera);
@@ -167,11 +168,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                       width:100,
                       height: 100,
-                      child: IconButton(
+                      child: image1 == null ? IconButton(
                         icon: Icon(Icons.add_outlined),
-                        onPressed: () {},
-                      ),
-                    )
+                        onPressed: () async {
+                          final File? selectedImage = await ImagePicker.pickImage(source: ImageSource.camera);
+                          setState(() {
+                            image1 = selectedImage;
+                          });
+                        },
+                      ) : Image.file(File(image1!.path)),
+                    ),
                   ],
                 )
             ),
