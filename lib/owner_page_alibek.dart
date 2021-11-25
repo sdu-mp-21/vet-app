@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import 'app_constants.dart';
-import 'model/owner.dart';
+import 'model/entity/owner.dart';
 
 bool selectedPrev = true;
 

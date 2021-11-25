@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vet_project/app_constants.dart' ;
 
-import 'main_drawer.dart';
-import 'main_listview.dart'; 
+import '../main_drawer.dart';
+import 'main_listview.dart';
 
 class MainScreen extends StatelessWidget {
   @override

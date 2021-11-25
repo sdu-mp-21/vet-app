@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:badges/badges.dart';
-import 'package:vet_project/model/owner.dart';
+import 'package:vet_project/model/entity/owner.dart';
 import 'package:vet_project/owner_page_with_camera.dart';
 import 'package:vet_project/view/owner_page.dart';
 // import 'package:vet_project/owner_page_dynamic.dart';
 
-import 'app_constants.dart';
+import '../app_constants.dart';
 
 class ChooseOwner extends  StatefulWidget {
 
