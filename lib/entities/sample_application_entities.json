@@ -4,7 +4,7 @@
     "locality_name": "Каратауский район",
     "data": [
       {
-        "id": 97,
+        "id": 98,
         "name": "Әлібек",
         "street": "Бескара",
         "home": "97",
@@ -19,32 +19,32 @@
         "status2_time": "1634141981"
       },
       {
-        "id": 97,
-        "name": "Әлібек",
-        "street": "Бескара",
-        "home": "97",
-        "krs_count": 20,
-        "phone": "+77054832390",
-        "surname": "Бекнияз",
-        "mrs_count": 4,
-        "pig_count": 2,
-        "horse_count": 1,
-        "camel_count": 9,
+        "id": 99,
+        "name": "Нурбол",
+        "street": "Оспанова",
+        "home": "5",
+        "krs_count": 13,
+        "phone": "+7882325120",
+        "surname": "Кусман",
+        "mrs_count": 9,
+        "pig_count": 10,
+        "horse_count": 17,
+        "camel_count": 2,
         "status": 2,
         "status2_time": "1634141981"
       },
       {
         "id": 97,
-        "name": "Әлібек",
-        "street": "Бескара",
+        "name": "Арман",
+        "street": "Уалиханова",
         "home": "97",
         "krs_count": 20,
         "phone": "+77054832390",
-        "surname": "Бекнияз",
-        "mrs_count": 4,
-        "pig_count": 2,
-        "horse_count": 1,
-        "camel_count": 9,
+        "surname": "Мухамбетжанов",
+        "mrs_count": 14,
+        "pig_count": 20,
+        "horse_count": 8,
+        "camel_count": 3,
         "status": 2,
         "status2_time": "1634141981"
       }
@@ -55,10 +55,10 @@
     "locality_name": "Енбекшинский район",
     "data": [
       {
-        "id": 100,
+        "id": 104,
         "name": "Виталий",
-        "street": "Уалиханова",
-        "home": "198",
+        "street": "Кенесары",
+        "home": "66",
         "krs_count": 6,
         "phone": "+77789973105",
         "surname": "Василенко",
@@ -71,18 +71,18 @@
       },
       {
         "id": 100,
-        "name": "Виталий",
+        "name": "Арман",
         "street": "Уалиханова",
-        "home": "198",
-        "krs_count": 6,
-        "phone": "+77789973105",
-        "surname": "Василенко",
-        "mrs_count": 2,
-        "pig_count": 1,
-        "horse_count": 1,
-        "camel_count": 8,
+        "home": "31",
+        "krs_count": 20,
+        "phone": "+77054832390",
+        "surname": "Мухамбетжанов",
+        "mrs_count": 14,
+        "pig_count": 20,
+        "horse_count": 8,
+        "camel_count": 3,
         "status": 2,
-        "status2_time": "1634187920"
+        "status2_time": "1634141981"
       }
     ]
   }
