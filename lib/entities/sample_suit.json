@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "name": "прочее",
+    "animal_type_id": -1
+  },
+  {
+    "id": 1,
+    "name": "Молочный",
+    "animal_type_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Молочно-мясной",
+    "animal_type_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Мясной",
+    "animal_type_id": 1
+  },
+  {
+    "id": 4,
+    "name": "Грубошерстный",
+    "animal_type_id": 2
+  },
+  {
+    "id": 5,
+    "name": "Каракульские",
+    "animal_type_id": 2
+  },
+  {
+    "id": 7,
+    "name": "Полугрубошерстный",
+    "animal_type_id": 2
+  },
+  {
+    "id": 8,
+    "name": "Тонкорунный",
+    "animal_type_id": 2
+  },
+  {
+    "id": 9,
+    "name": "Полутонкорунный",
+    "animal_type_id": 2
+  },
+  {
+    "id": 10,
+    "name": "Прочие",
+    "animal_type_id": 2
+  },
+  {
+    "id": 11,
+    "name": "Верхово-упряжные",
+    "animal_type_id": 3
+  },
+  {
+    "id": 12,
+    "name": "Верховые",
+    "animal_type_id": 3
+  },
+  {
+    "id": 13,
+    "name": "Рысистые",
+    "animal_type_id": 3
+  },
+  {
+    "id": 14,
+    "name": "Тяжелоупряжные и местные",
+    "animal_type_id": 3
+  },
+  {
+    "id": 17,
+    "name": "Продуктивный",
+    "animal_type_id": 3
+  },
+  {
+    "id": 18,
+    "name": "Прочие",
+    "animal_type_id": 3
+  },
+  {
+    "id": 19,
+    "name": "Молочный",
+    "animal_type_id": 5
+  },
+  {
+    "id": 20,
+    "name": "Мясо-шерстный",
+    "animal_type_id": 5
+  }
+]
