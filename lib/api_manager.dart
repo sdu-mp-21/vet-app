@@ -6,9 +6,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vet_project/main.dart';
+import 'model/entity/region.dart';
+import 'view/main.dart';
 
-class api_manager {
+class ApiManager {
   String token = '';
   int stateId = 92;
   int type = 1;
@@ -55,6 +56,20 @@ class api_manager {
       print('Not 200');
     }
   }
+
+  // Future<List<Region>> getRegions(String tok) async {
+  //   var response = await await http.get('https://admin.vetqyzmet.kz/api/v5/getInfo', headers: <String, String>{
+  //     'Content-Type': 'application/json; charset=UTF-8',
+  //     'Authorization' : 'Bearer $tok'
+  //   });
+  //   final data = await json.decode(response.body) as List<dynamic> ;
+  //   setState(() {
+  //     _items = data.map((e) => Region.fromJson(e)).toList();
+  //   });
+  //   // List<Region> regions = data.map((data) => Region.fromJson(data)).toList();
+  //   return data.map((e) => Region.fromJson(e)).toList();
+  // }
+
 
 
   getTypes() async {

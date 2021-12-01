@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'app_constants.dart';
+import 'resourses/app_constants.dart';
 import 'camera.dart';
 
 class owner_page extends StatelessWidget {

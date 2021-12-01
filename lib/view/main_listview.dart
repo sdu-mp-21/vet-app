@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vet_project/view/animal_reg.dart';
-import 'package:vet_project/app_constants.dart';
+import 'package:vet_project/resourses/app_constants.dart';
 import 'package:vet_project/assets/vet_icons.dart';
 
 // import 'package:vet_project/veticons_icons.dart';

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vet_project/model/entity/owner.dart';
 
-import '../app_constants.dart';
+import '../resourses/app_constants.dart';
 import 'owner_adding_animal.dart';
 
 class OwnerPage extends  StatefulWidget {

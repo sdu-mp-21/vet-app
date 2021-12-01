@@ -11,7 +11,7 @@ import 'package:vet_project/owner_page_with_camera.dart';
 import 'package:vet_project/view/owner_page.dart';
 // import 'package:vet_project/owner_page_dynamic.dart';
 
-import '../app_constants.dart';
+import '../resourses/app_constants.dart';
 
 class ChooseOwner extends  StatefulWidget {
 
