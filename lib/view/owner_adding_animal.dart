@@ -74,42 +74,66 @@ class _AnimalAdding extends State<AnimalAdding> {
           padding: const EdgeInsets.all(20),
           child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  DropdownButton<String>(
-                    isExpanded: true,
-                    value: _myAnimalType,
-                    items: _animalType.map((e) {
-                      return DropdownMenuItem<String>(
-                        child: Text(e.name),
-                          value: e.name,
-                      );
-                    }).toList(),
-                    onChanged: (newValue) {
-                      selectedSuit = null;
-                      selectedBreed = null;
-                      // _myAnimalType = newValue;
-                      if (newValue == "Крупный рогатый скот") suit = getSuitOfSelectedAnimalType(1);
-                      if (newValue == "Мелкий рогатый скот") suit = getSuitOfSelectedAnimalType(2);
-                      if (newValue == "Лошадь") suit = getSuitOfSelectedAnimalType(3);
-                      if (newValue == "Свинья") suit = getSuitOfSelectedAnimalType(4);
-                      if (newValue == "Верблюд") suit = getSuitOfSelectedAnimalType(5);
-                          setState(() {
-                            _myAnimalType = newValue;
-                        });
-                    },
-                    hint: Container(
-                      width: 150, //and here
-                      child: const Text(
-                        "Select Animal's Type",
-                        style: TextStyle(color: Colors.grey),
-                        textAlign: TextAlign.start,
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child: const Text("Choose animal type"),
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Container(
+                    height: 40,
+                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.GRAY_BORDERS, width: 1.0),
+                        borderRadius: BorderRadius.circular(11),
+                    ),
+                    child : DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        isExpanded: true,
+                        value: _myAnimalType,
+                        items: _animalType.map((e) {
+                          return DropdownMenuItem<String>(
+                            child: Text(e.name),
+                              value: e.name,
+                          );
+                        }).toList(),
+                        onChanged: (newValue) {
+                          selectedSuit = null;
+                          selectedBreed = null;
+                          // _myAnimalType = newValue;
+                          if (newValue == "Крупный рогатый скот") suit = getSuitOfSelectedAnimalType(1);
+                          if (newValue == "Мелкий рогатый скот") suit = getSuitOfSelectedAnimalType(2);
+                          if (newValue == "Лошадь") suit = getSuitOfSelectedAnimalType(3);
+                          if (newValue == "Свинья") suit = getSuitOfSelectedAnimalType(4);
+                          if (newValue == "Верблюд") suit = getSuitOfSelectedAnimalType(5);
+                              setState(() {
+                                _myAnimalType = newValue;
+                            });
+                        },
                       ),
                     ),
                   ),
                   const SizedBox(height: 20,),
-
-                  DropdownButton<String>(
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child: const Text("Choose purpose"),
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Container(
+                    height: 40,
+                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.GRAY_BORDERS, width: 1.0),
+                        borderRadius: BorderRadius.circular(11),
+                      ),
+                      child :
+                      DropdownButtonHideUnderline(
+                        child: DropdownButton<String>(
                     isExpanded: true,
                     value: selectedSuit,
                     items: suit.map((e) {
@@ -141,86 +165,119 @@ class _AnimalAdding extends State<AnimalAdding> {
                         selectedSuit = newValue;
                       });
                     },
-                    hint: Container(
-                      width: 150, //and here
-                      child: const Text(
-                        "Select Animal's Breed",
-                        style: TextStyle(color: Colors.grey),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
                   ),
-                  const SizedBox(height: 40,),
-                  DropdownButton<String>(
-                    isExpanded: true,
-                    value: selectedBreed,
-                    items: breed.map((e) {
-                      return DropdownMenuItem<String>(
-                        child: Text(e.name),
-                        value: e.name,
-                      );
-                    }).toList(),
-                    onChanged: (val) {
-                      setState(() {
-                        selectedBreed = val;
-                      });
-                    },
-                    hint: Container(
-                      width: 150, //and here
-                      child: const Text(
-                        "Select Animal's Purpose",
-                        style: TextStyle(color: Colors.grey),
-                        textAlign: TextAlign.start,
                       ),
-                    ),
                   ),
                   const SizedBox(height: 20,),
-                  FormBuilderTextField(
-                    name: "animal-id",
-                    validator: FormBuilderValidators.integer(context),
-                    decoration: InputDecoration(
-                      focusedBorder: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(11),
-                        ),
-                        borderSide: BorderSide(color: AppColors.MAIN_COLOR),
-                      ),
-                      border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(11),
-                        ),
-                      ),
-                      filled: true,
-                      hintStyle: TextStyle(color: Colors.grey[800]),
-                      hintText: "Type ID",
-                      fillColor: AppColors.BACKGROUND_COLOR,
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child:  const Text("Choose breed"),
                     ),
                   ),
+                  const SizedBox(height: 10,),
+
+                  Container(
+                    height: 40,
+                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.GRAY_BORDERS, width: 1.0),
+                        borderRadius: BorderRadius.circular(11),
+                      ),
+                      child :
+                      DropdownButtonHideUnderline(
+                                child: DropdownButton<String>(
+                            isExpanded: true,
+                            value: selectedBreed,
+                            items: breed.map((e) {
+                              return DropdownMenuItem<String>(
+                                child: Text(e.name),
+                                value: e.name,
+                              );
+                            }).toList(),
+                            onChanged: (val) {
+                              setState(() {
+                                selectedBreed = val;
+                              });
+                            },
+                          ),
+                      ),
+                  ),
+                  const SizedBox(height: 20,),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child:  const Text("Input ID"),
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  Container(
+                    height: 40,
+                    child: FormBuilderTextField(
+                      name: "animal-id",
+                      validator: FormBuilderValidators.integer(context),
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                        focusedBorder: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(11),
+                          ),
+                          borderSide: BorderSide(color: AppColors.MAIN_COLOR),
+                        ),
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(11),
+                          ),
+                        ),
+                        filled: true,
+                        hintStyle: TextStyle(color: Colors.grey[800]),
+                        hintText: "",
+                        fillColor: AppColors.BACKGROUND_COLOR,
+                      ),
+                    ),
+                    ),
+
                   const SizedBox(height: 20,),
                   FormBuilderRadioGroup(
+                    activeColor: AppColors.MAIN_COLOR,
                     name: "animal-sex",
-                    options: const [
+                    options:  [
                       FormBuilderFieldOption(
-                        value: "Male", child: Text("Male"),),
-                      FormBuilderFieldOption(
+                        value: "Male", child: Container(
+                        padding: const EdgeInsets.only(right: 55.0),
+                        child :const Text("Male"),),),
+                      const FormBuilderFieldOption(
                         value: "Female", child: Text("Female"),)
                     ],
-                  ),
-                  const SizedBox(height: 20,),
-                  FormBuilderDateTimePicker(
-                    name: "animal-birth",
                     decoration: const InputDecoration(
-                      labelText: "Date of birth",
+                      // focusColor: AppColors.MAIN_COLOR,
                     ),
                   ),
-                  const SizedBox(height: 155,),
-                  Row(
+                  const SizedBox(height: 30,),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child:  const Text("Date of birth"),
+                    ),
+                  ),
+                  const SizedBox(height: 10,),
+                  FormBuilderDateTimePicker(
+                    name: "animal-birth",
+                    inputType: InputType.date,
+                    format: DateFormat('yyyy/MM/dd'),
+                    decoration: const InputDecoration(
+                    ),
+                  ),
+                  // const SizedBox(height: 155,),
+                 Container(
+                      margin: EdgeInsets.only(top: 40.0),
+                    child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
                         child: const Text('Cancel'),
                         style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(167, 55),
+                          minimumSize: const Size(180, 60),
                           textStyle: const TextStyle(fontSize: 20),
                           primary: const Color(0XffDCE0E5),
                           onPrimary: AppColors.GREY_COLOR,
@@ -235,7 +292,7 @@ class _AnimalAdding extends State<AnimalAdding> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(167, 55),
+                          minimumSize: const Size(180, 60),
                           textStyle: const TextStyle(fontSize: 20),
                           primary: AppColors.MAIN_COLOR,
                           onPrimary: Colors.white,
@@ -245,12 +302,13 @@ class _AnimalAdding extends State<AnimalAdding> {
                       ),
                     ],
                   ),
+                  ),
                 ],
+                  ),
+          ),
               )
           ),
-        ),
-      ),
-    );
+        );
   }
 
   List<Suit> _suit = [];

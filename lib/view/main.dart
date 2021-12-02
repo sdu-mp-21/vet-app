@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vet_project/pages/adding_animal_page.dart';
 import 'package:vet_project/view/choose_owner.dart';
 import 'package:vet_project/view/owner_page.dart';
 
@@ -21,7 +22,8 @@ class StaticApp extends StatelessWidget {
         AnimalRegistration.routeName: (context) => AnimalRegistration(),
         ChooseOwner.routeName: (context) => ChooseOwner(),
         OwnerPage.routeName: (context) => OwnerPage(),
-        AnimalAdding.routeName: (context) => AnimalAdding()
+        AnimalAdding.routeName: (context) => AnimalAdding(),
+        AddingAnimalPage.routeName: (context) => AddingAnimalPage()
       },
     );
   }

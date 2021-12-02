@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:vetqyzmet_flutter_week12/custom/custom_appbar.dart';
-import 'package:vetqyzmet_flutter_week12/utils/add_spaces.dart';
-import 'package:vetqyzmet_flutter_week12/utils/constans.dart';
-import 'package:vetqyzmet_flutter_week12/custom/borderbox_adding_animal.dart';
-import 'package:vetqyzmet_flutter_week12/custom/text_field_adding_animal.dart';
-import 'package:vetqyzmet_flutter_week12/custom/custom_button_adding_animal.dart';
+import 'package:vet_project/custom/borderbox_adding_animal.dart';
+import 'package:vet_project/custom/custom_appbar.dart';
+import 'package:vet_project/custom/custom_button_adding_animal.dart';
+import 'package:vet_project/custom/text_field_adding_animal.dart';
+import 'package:vet_project/utils/add_spaces.dart';
+import 'package:vet_project/utils/constans.dart';
+
 
 
 class AddingAnimalPage extends StatelessWidget {
   const AddingAnimalPage({ Key? key }) : super(key: key);
+  static const String routeName = "/owner_adding_animal_page1";
+
 
   @override
   Widget build(BuildContext context) {

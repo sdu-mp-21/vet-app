@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vetqyzmet_flutter_week12/utils/add_spaces.dart';
-import 'package:vetqyzmet_flutter_week12/utils/constans.dart';
+import 'package:vet_project/utils/add_spaces.dart';
+import 'package:vet_project/utils/constans.dart';
+
 
 
 class BorderBoxAddingAnimal extends StatelessWidget {

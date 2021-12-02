@@ -28,7 +28,7 @@ class AnimalRegistration extends StatefulWidget {
 class _AnimalRegistration extends State<AnimalRegistration> {
 
 
-  String token = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsIiwiaWF0IjoiMTYzODM1ODU5OSIsImV4cCI6IjE2MzgzNjIxOTkiLCJqdGkiOiIxYzlkNjExOTY1YTFiOGFkMmE3MGZmZWU0ZTMyNmE0MyJ9.8bd55a6b3b954fc4d1e55dec900b6623e29f22daa87d262ee63fe5a43a2622763789970b2fbe6508653d6303e8354b3b46d482fca318426f7001b712671e790c';
+  String token = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsIiwiaWF0IjoiMTYzODQxODI0NyIsImV4cCI6IjE2Mzg0MjE4NDciLCJqdGkiOiJlZTQzZTk5MDhlN2U0Njc2MGJjNjUzZTg3ZTc5NjMzOCJ9.57b79de1e3f4bf2daa5bd663d416a6ebe000a41ae819075b7c89509cd496f105694a5c137e6a3ff5ecc8a6191c49502ec9162d71b1fccce6fa8a250c833b43ce';
   getUserData(String email, String password) async {
     Map data = {
       'email' : email,

@@ -11,4 +11,5 @@ class AppColors {
   static const Color MAIN_COLOR = Color(0xffff7800);
   static const Color GREY_COLOR = Color(0xff212529);
   static const Color COUNT_COLOR = Color(0xffFFE4CC);
+  static const Color GRAY_BORDERS = Color(0xFFDCE0E5);
 }
