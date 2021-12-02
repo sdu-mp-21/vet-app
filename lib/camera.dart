@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:vet_project/view/owner_adding_animal.dart';
 
 import 'package:image_picker/image_picker.dart';
 
@@ -15,7 +16,14 @@ class camera_page extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+
+  final selectedType;
+  final selectedSuit;
+  final selectedBreed;
+  final gender;
+  final animal_birthday;
+  final typeId;
+  const HomePage({Key? key, this.selectedType, this.selectedSuit, this.selectedBreed, this.gender, this.animal_birthday, this.typeId,}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,8 +32,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   //final ImagePicker _picker = ImagePicker();
+  AnimalAdding animal = AnimalAdding();
   File? image;
   File? image1;
+  File? image2;
 
   void filePicker() async {
     final File? selectedImage = await ImagePicker.pickImage(source: ImageSource.camera);
@@ -43,7 +53,9 @@ class _HomePageState extends State<HomePage> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back_rounded,
                 color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AnimalAdding()));
+            },
           ),
           title: const Text(
             "Завершение регистрации",
@@ -61,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       Text('Тип животного',
                         style: TextStyle(color:Color.fromRGBO(93, 105, 120, 50),height: 0.5,fontSize: 12),
                       ),
-                      Text('Корова',
+                      Text(widget.selectedType,
                           style: TextStyle(fontSize:16, height:1.5, )
                       ),
                     ],
@@ -74,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                       Text('ИНЖ',
                         style: TextStyle(color: Color.fromRGBO(93, 105, 120, 50), height: 0.5, fontSize:12),
                       ),
-                      Text('9502394823',
+                      Text(widget.typeId,
                           style: TextStyle(fontSize: 16, height: 1.5)
                       ),
                     ],
@@ -87,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                       Text('Пол',
                         style: TextStyle(color: Color.fromRGBO(93, 105, 120, 50), height: 0.5, fontSize:12),
                       ),
-                      Text('Самка',
+                      Text(widget.gender,
                           style: TextStyle(fontSize: 16, height: 1.5)
                       ),
                     ],
@@ -100,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                       Text('Порода',
                         style: TextStyle(color: Color.fromRGBO(93, 105, 120, 50), height: 0.5, fontSize:12),
                       ),
-                      Text('Казахская белоголовая',
+                      Text(widget.selectedSuit,
                           style: TextStyle(fontSize: 16, height: 1.5)
                       ),
                     ],
@@ -113,12 +125,25 @@ class _HomePageState extends State<HomePage> {
                       Text('Дата рождения',
                         style: TextStyle(color: Color.fromRGBO(93, 105, 120, 50), height: 0.5, fontSize:12),
                       ),
-                      Text('Бела-Коричневый',
+                      Text(widget.animal_birthday,
                           style: TextStyle(fontSize: 16, height: 1.5)
                       ),
                     ],
                   ),
                 ),
+                Padding(padding: EdgeInsets.only(top:30),
+                  child: Column(
+                    children: [
+                      Text('Масть',
+                        style: TextStyle(color: Color.fromRGBO(93, 105, 120, 50), height: 0.5, fontSize:12),
+                      ),
+                      Text(widget.selectedBreed,
+                          style: TextStyle(fontSize: 16, height: 1.5)
+                      ),
+                    ],
+                  ),
+                ),
+
 
               ],
             ),
@@ -129,19 +154,17 @@ class _HomePageState extends State<HomePage> {
                   children: [
 
                     Container(
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                            left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                            right: BorderSide(width: 1.0, color: Color(0xFF000000)),
-                            bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
-                          ),
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                          left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                          right: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                          bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
                         ),
-                        width:100,
-                        height: 100,
-                        child: Image(
-                          image: NetworkImage('https://www.agroinvestor.ru/upload/iblock/8de/8de23dcf93a15ba49ae204f2498df956.jpg'),
-                        )
+                      ),
+                      width:100,
+                      height: 100,
+                      child: image2 == null? showIconButton() : Image.file(File(image2!.path)),
                     ),
                     Container(
                       decoration: const BoxDecoration(
@@ -177,6 +200,27 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                       ) : Image.file(File(image1!.path)),
+                    ),
+                  ],
+                )
+            ),
+            Padding(
+                padding: EdgeInsetsDirectional.only(top: 80),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                        ),
+                        child: Text("Заполнить заново",
+                          style: TextStyle(color: Colors.black),)
+                    ),
+                    ElevatedButton(onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromRGBO(255, 122, 0, 1),
+                      ),
+                      child: Text("Завершить"),
                     ),
                   ],
                 )

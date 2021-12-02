@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:vetqyzmet_flutter_week12/custom/animal_count_button.dart';
-import 'package:vetqyzmet_flutter_week12/custom/custom_appbar.dart';
-import 'package:vetqyzmet_flutter_week12/pages/adding_animal_page.dart';
-import 'package:vetqyzmet_flutter_week12/utils/add_spaces.dart';
-import 'package:vetqyzmet_flutter_week12/utils/constans.dart';
-import 'package:vetqyzmet_flutter_week12/custom/owner_page_text.dart';
-import 'package:vetqyzmet_flutter_week12/utils/animal_count_data.dart';
+import 'package:vet_project/custom/animal_count_button.dart';
+import 'package:vet_project/custom/custom_appbar.dart';
+import 'package:vet_project/pages/adding_animal_page.dart';
+import 'package:vet_project/utils/add_spaces.dart';
+import 'package:vet_project/utils/constans.dart';
+import 'package:vet_project/utils/animal_count_data.dart';
+import 'package:vet_project/custom/owner_page_text.dart';
+//import 'package:vetqyzmet_flutter_week12/custom/animal_count_button.dart';
+//import 'package:vetqyzmet_flutter_week12/custom/custom_appbar.dart';
+//import 'package:vetqyzmet_flutter_week12/pages/adding_animal_page.dart';
+//import 'package:vetqyzmet_flutter_week12/utils/add_spaces.dart';
+//import 'package:vetqyzmet_flutter_week12/utils/constans.dart';
+//import 'package:vetqyzmet_flutter_week12/custom/owner_page_text.dart';
+//import 'package:vetqyzmet_flutter_week12/utils/animal_count_data.dart';
 
 class OwnerPage extends StatefulWidget {
   const OwnerPage({Key? key}) : super(key: key);
