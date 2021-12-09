@@ -4,6 +4,8 @@ import 'package:vet_project/view/owner_adding_animal.dart';
 
 import 'package:image_picker/image_picker.dart';
 
+import 'check_mate.dart';
+
 class camera_page extends StatelessWidget {
   const camera_page({Key? key}) : super(key: key);
 
@@ -153,53 +155,93 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
 
-                    Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                          left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                          right: BorderSide(width: 1.0, color: Color(0xFF000000)),
-                          bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                    Stack(
+                      children: [
+                        Container(
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                            left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                            right: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                            bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                          ),
                         ),
+                        width:100,
+                        height: 100,
+                        child: image2 == null? showIconButton() : Image.file(File(image2!.path)),
                       ),
-                      width:100,
-                      height: 100,
-                      child: image2 == null? showIconButton() : Image.file(File(image2!.path)),
-                    ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                          left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                          right: BorderSide(width: 1.0, color: Color(0xFF000000)),
-                          bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
-                        ),
-                      ),
-                      width:100,
-                      height: 100,
-                      child: image == null? showIconButton() : Image.file(File(image!.path)),
-                    ),
+                        Positioned(
+                          top: -10,
+                          right:-10,
+                          child: IconButton(onPressed: (){
+                            setState(() {
+                              if(image2 != null)
+                                image2 = null;
+                            });
+                          }, icon: Icon(Icons.cancel_outlined)),),
 
-                    Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                          left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
-                          right: BorderSide(width: 1.0, color: Color(0xFF000000)),
-                          bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                      ],
+                    ),
+                    Stack(
+                      children: [
+                        Container(
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                              left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                              right: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                              bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                            ),
+                          ),
+                          width:100,
+                          height: 100,
+                          child: image == null? showIconButton() : Image.file(File(image!.path)),
                         ),
+                        Positioned(
+                          top: -10,
+                          right:-10,
+                          child: IconButton(onPressed: (){
+                            setState(() {
+                              if(image != null)
+                                image = null;
+                            });
+                          }, icon: Icon(Icons.cancel_outlined)),),
+                    ]
+                    ),
+                    Stack(
+                      children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            top: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                            left: BorderSide(width: 1.0, color: Color(0xFFFFFFFF)),
+                            right: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                            bottom: BorderSide(width: 1.0, color: Color(0xFF000000)),
+                          ),
+                        ),
+                        width:100,
+                        height: 100,
+                        child: image1 == null ? IconButton(
+                          icon: Icon(Icons.add_outlined),
+                          onPressed: () async {
+                            final File? selectedImage = await ImagePicker.pickImage(source: ImageSource.camera);
+                            setState(() {
+                              image1 = selectedImage;
+                            });
+                          },
+                        ) : Image.file(File(image1!.path)),
                       ),
-                      width:100,
-                      height: 100,
-                      child: image1 == null ? IconButton(
-                        icon: Icon(Icons.add_outlined),
-                        onPressed: () async {
-                          final File? selectedImage = await ImagePicker.pickImage(source: ImageSource.camera);
-                          setState(() {
-                            image1 = selectedImage;
-                          });
-                        },
-                      ) : Image.file(File(image1!.path)),
+                        Positioned(
+                          top: -10,
+                          right:-10,
+                          child: IconButton(onPressed: (){
+                            setState(() {
+                              if(image1 != null)
+                                image1 = null;
+                            });
+                          }, icon: Icon(Icons.cancel_outlined)),),
+                      ],
+
                     ),
                   ],
                 )
@@ -209,14 +251,18 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ElevatedButton(onPressed: () {},
+                    ElevatedButton(onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => AnimalAdding()));
+                    },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,
                         ),
                         child: Text("Заполнить заново",
                           style: TextStyle(color: Colors.black),)
                     ),
-                    ElevatedButton(onPressed: () {},
+                    ElevatedButton(onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApp()));
+                    },
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromRGBO(255, 122, 0, 1),
                       ),

@@ -50,9 +50,6 @@ class _AnimalAdding extends State<AnimalAdding> {
   String? typeId;
   String? animal_birthday;
 
-  String? getSelectedType() {
-    return selectedType;
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -266,6 +263,7 @@ class _AnimalAdding extends State<AnimalAdding> {
                         ),
                         child: const Text('Next'),
                         onPressed: () {
+                          animal_birthday = animal_birthday!.replaceRange(15, 22, '');
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(selectedType: _myAnimalType, typeId: typeId, selectedSuit: selectedSuit, gender: gender, animal_birthday: animal_birthday,selectedBreed: selectedBreed,)));
                         },
                       ),

@@ -80,7 +80,7 @@ flutter:
     - lib/entities/sample_animal_types.json
     - lib/entities/sample_suit.json
     - lib/entities/sample_breed.json
-
+    - lib/assets/img/
   # fonts:
   #   - family: VetIcons
   #     fonts:

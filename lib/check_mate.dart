@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:vet_project/view/main_screen.dart';
 
 class MyApp extends StatelessWidget {
   BoxDecoration myBoxDecoration() {
@@ -33,10 +34,9 @@ class MyApp extends StatelessWidget {
                   SizedBox(
                     height: 150,
                   ),
-
-                  Image.asset('assets/galzh.jpg',
+                  Image.asset('lib/assets/img/check_mark.png',
                     width: 140,
-                    height: 182,),
+                    height: 102,),
                   SizedBox(
                     height: 10,
                   ),
@@ -60,7 +60,9 @@ class MyApp extends StatelessWidget {
                           horizontal: 170
                       ),
                       color: Colors.black12,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainScreen()));
+                      },
                       child: Text('Главное',
                         style: TextStyle(fontSize:17 ,
                           fontWeight: FontWeight.w500,
