@@ -1,16 +1,15 @@
-# vet_project
+# VetApp
+> Application for veterinarians, where registration and other important veterinary services can be carried out.
 
-A new Flutter project.
+## Team Orange
+- 190107076 Abikhan Ulan
+- 190107074 Bekniyaz Alibek
+- 190107019 Berdaliyev Beybaris
+- 190107037 Kuandykov Abzal
+- 190117001 Shivtsov Yegor
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Copyright-_all_rights_reserved.png" width = "270" height = "450">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## All rights reserved
+SDU CifrON Team Orange
