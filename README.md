@@ -1,5 +1,15 @@
 # VetApp
-> Application for veterinarians, where registration and other important veterinary services can be carried out.
+> There is our project for CSS-216 2021.
+
+## Table of Contents
+* [General Info](#general-information)
+* [Project structure](#structure)
+* [About team](#team)
+* [Acknowledgements](#acknowledgements)
+* [All rights reserved](#reserved)
+
+## General Information
+Application for veterinarians, where registration and other important veterinary services can be carried out.	
 
 ## Team Orange
 - 190107076 Abikhan Ulan
