@@ -8,7 +8,16 @@ There is our project for CSS-216 2021.
 * [All rights reserved](#all-rights-reserved)
 
 ## General Information
-Application for veterinarians, where registration and other important veterinary services can be carried out.   	
+Application for veterinarians, where registration and other important veterinary services can be carried out.   
+
+## Project structure
+- Login page
+- Main page 
+- Localization page 
+- Registartion page
+- Information page
+- Data Checker page
+- Status page	
 
 ## Team Orange
 - 190107076 Abikhan Ulan
@@ -18,7 +27,7 @@ Application for veterinarians, where registration and other important veterinary
 - 190117001 Shivtsov Yegor
 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Copyright-_all_rights_reserved.png">
-
 ## All rights reserved
 SDU CifrON Team Orange
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Copyright-_all_rights_reserved.png">
