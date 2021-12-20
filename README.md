@@ -9,7 +9,7 @@
 - 190117001 Shivtsov Yegor
 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Copyright-_all_rights_reserved.png" width = "270" height = "450">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Copyright-_all_rights_reserved.png">
 
 ## All rights reserved
 SDU CifrON Team Orange
