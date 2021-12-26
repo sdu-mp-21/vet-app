@@ -16,5 +16,5 @@ Application for veterinarians, where registration and other important veterinary
 
 
 # Presentation
-  Link to <a href="https://docs.google.com/presentation/d/17rwBUGktYhAc0tG8737W7WzGoX-i8ycGn4DWklw2RBk/edit?usp=sharing">presentation</a>
+  Link to <a href="https://www.canva.com/design/DAEzFXdRJss/Mokzgl3MjqiPMLeYqiPMwQ/view?utm_content=DAEzFXdRJss&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton">presentation</a>
 
