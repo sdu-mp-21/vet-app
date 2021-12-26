@@ -15,6 +15,15 @@ Application for veterinarians, where registration and other important veterinary
 - 190117001 Shivtsov Yegor
 
 
-# Presentation
+## Presentation
   Link to <a href="https://www.canva.com/design/DAEzFXdRJss/Mokzgl3MjqiPMLeYqiPMwQ/view?utm_content=DAEzFXdRJss&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton">presentation</a>
 
+
+## Structure of app
+- Login page
+- Main page 
+- Localization page 
+- Registartion page
+- Information page
+- Data Checker page
+- Status page
